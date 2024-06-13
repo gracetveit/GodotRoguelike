@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://s18ffgx6xchk"]
+
+[ext_resource type="FontFile" uid="uid://cox62jdckes7r" path="res://FiraMono/FiraMonoNerdFontMono-Regular.otf" id="1_dkqyh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4fl15"]
+font = ExtResource("1_dkqyh")
+
+[node name="Player" type="Sprite2D"]
+centered = false
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "@"
+label_settings = SubResource("LabelSettings_4fl15")
+horizontal_alignment = 1
+vertical_alignment = 1

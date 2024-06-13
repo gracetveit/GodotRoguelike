@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=2 format=3 uid="uid://cmvl658vdee1x"]
+
+[ext_resource type="Script" path="res://src/Entities/entity_definition.gd" id="1_7qdii"]
+
+[resource]
+script = ExtResource("1_7qdii")
+color = Color(1, 1, 1, 1)
