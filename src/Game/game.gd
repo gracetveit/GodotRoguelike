@@ -7,6 +7,7 @@ const player_definition: EntityDefinition = preload("res://assets/definitions/en
 @onready var npc: Entity
 @onready var event_handler: EventHandler = $EventHandler
 @onready var entities: Node2D = $Entities
+@onready var map: Map = $Map
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,11 +20,19 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	var action: Action = event_handler.get_action()
+# func _process(_delta: float) -> void:
+# 	var action: Action = event_handler.get_action()
 
-	if action is MovementAction:
-		player.move(action.offset)
-		npc.random_move()
-	elif action is EscapeAction:
-		get_tree().quit()
+# 	if action is MovementAction:
+# 		player.move(action.offset)
+# 		npc.random_move()
+# 	elif action is EscapeAction:
+# 		get_tree().quit()
+
+func _physics_process(_delta: float) -> void:
+	var action: Action = event_handler.get_action()
+	if action:
+		action.perform(self, player)
+
+func get_map_data() -> MapData:
+	return map.map_data
